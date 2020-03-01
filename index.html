@@ -20,6 +20,9 @@
     <meta name="msapplication-TileColor" content="#000000">
     <meta name="msapplication-TileImage" content="img/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#000000">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159373076-1"></script>
     <script>
@@ -30,11 +33,13 @@
         gtag('config', 'UA-159373076-1');
     </script>
 
-    <link rel="prefetch" href="/img/banner-rain.png">
+    <link rel="prefetch" href="img/banner-rain.png">
+    <link rel="prefetch" href="img/logo-rain.png">
+    <link rel="prefetch" href="https://img.shields.io/github/v/release/denoland/deno?include_prereleases&label=latest%20deno">
 
     <style>
         * {
-            padding: 0px;
+            margin: 0;
         }
 
         body {
@@ -44,19 +49,25 @@
         }
 
         .banner {
-            max-width: 800px;
-            display: block;
-            margin: auto;
+            background: no-repeat center center;
+            background-size: contain;
+            background-image: url("img/banner-rain.png");
+            height: 300px;
+            margin-bottom: -50px;
+        }
+
+        @media only screen and (max-device-width: 400px) {
+            .banner {
+                background-image: url("img/logo-rain.png");
+                margin: 50px;
+            }
         }
 
         .links {
+            /* margin-top: -50px; */
+            display: flex;
+            justify-content: center;
             align-content: center;
-            width: 400px;
-            margin: -50px auto;
-        }
-
-        .links ul {
-            margin: 0 0 0 calc(50% - 1.5rem - 40px);
         }
 
         .links a {
@@ -88,14 +99,57 @@
 
         .links ul li {
             list-style: none;
+        }
+
+        .links ul li:not(:last-child) {
             margin-bottom: 10px;
+        }
+
+        header {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+        }
+
+        header * {
+            margin: .5rem;
+        }
+
+        header img {
+            float: left;
+        }
+
+        header a, footer a {
+            font-size: .6rem;
+            color: #CCC;
+            text-decoration: none;
+        }
+
+        .improve { 
+            float: right;
+        }
+
+        footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
         }
     </style>
 </head>
 
 
 <body>
-    <img class="banner" loading="lazy" src="img/banner-rain.png" />
+    <header>
+        <a href="https://github.com/denoland/deno/releases/latest" target="blank">
+            <img alt="GitHub release (latest by date including pre-releases)"
+                src="https://img.shields.io/github/v/release/denoland/deno?include_prereleases&label=latest%20deno">
+        </a>
+        <a class="improve" href="https://github.com/ParisDeno/ParisDeno.github.io/edit/master/index.html">Improve this page</a>
+    </header>
+    <div class="banner"></div>
     <div class="links">
         <ul>
             <li>
@@ -160,6 +214,14 @@
             </li>
         </ul>
     </div>
+    <footer class="version">...</footer>
+
+    <script>
+        fetch && fetch('https://api.github.com/repos/ParisDeno/ParisDeno.github.io/commits/HEAD').then(repsonse => repsonse.json()).then(commit => {
+            document.querySelector('.version').innerHTML = `<a target="blank" href="${commit.html_url}">${commit.sha.substring(0, 7)}</a>`;
+        })
+        
+    </script>
 </body>
 
 </html>
