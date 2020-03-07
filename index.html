@@ -20,8 +20,53 @@
     <meta name="msapplication-TileColor" content="#000000">
     <meta name="msapplication-TileImage" content="img/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#000000">
+    <meta name="description"
+        content="Paris Deno community group website. Gives access to various information about Deno french community.">
+    <meta name="keywords"
+        content="deno, parisdeno, meetup, community, denoland, french meetup, france, typescript, javascript, rust, v8">
+    <meta name="robots" content="index,follow">
+    <meta name="copyright" content="Paris Deno ©">
+    <meta name="author" content="Paris Deno, contact@deno.paris">
+    <meta name="url" content="https://deno.paris">
+    <meta name="identifier-URL" content="https://deno.paris">
+    <meta name="og:url" content="https://deno.paris">
+    <meta name="og:image" content="https://deno.paris/img/logo-rain.png">
+    <meta name="og:site_name" content="Paris Deno">
+    <meta name="og:description"
+        content="Paris Deno community group website. Gives access to various information about Deno french community.">
+    <meta name="og:email" content="contact@deno.paris">
+    <meta name="og:locality" content="Paris">
+    <meta name="og:country-name" content="Paris">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "url": "https://deno.paris",
+          "name": "Paris Deno",
+          "logo": "https://deno.paris/img/logo-rain.png",
+          "location": "Paris",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "contact@deno.paris",
+            "contactType": "Organizers"
+          },
+          "founder": {
+          	"@type": "Person",
+            "name": "Lilian Saget-Lethias",
+            "url": "https://twitter.com/lsagetlethias"
+          },
+          "members": [
+          	{
+            	"@type": "Person",
+                "name": "Sylvain Pontoreau",
+                "url": "https://sylvain.pontoreau.com/"
+            }
+          ]
+        }
+        </script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159373076-1"></script>
@@ -35,7 +80,8 @@
 
     <link rel="prefetch" href="img/banner-rain.png">
     <link rel="prefetch" href="img/logo-rain.png">
-    <link rel="prefetch" href="https://img.shields.io/github/v/release/denoland/deno?include_prereleases&label=latest%20deno">
+    <link rel="prefetch"
+        href="https://img.shields.io/github/v/release/denoland/deno?include_prereleases&label=latest%20deno">
 
     <style>
         * {
@@ -120,13 +166,14 @@
             float: left;
         }
 
-        header a, footer a {
+        header a,
+        footer a {
             font-size: .6rem;
             color: #CCC;
             text-decoration: none;
         }
 
-        .improve { 
+        .improve {
             float: right;
         }
 
@@ -147,7 +194,8 @@
             <img alt="GitHub release (latest by date including pre-releases)"
                 src="https://img.shields.io/github/v/release/denoland/deno?include_prereleases&label=latest%20deno">
         </a>
-        <a class="improve" href="https://github.com/ParisDeno/ParisDeno.github.io/edit/master/index.html">Improve this page</a>
+        <a class="improve" href="https://github.com/ParisDeno/ParisDeno.github.io/edit/master/index.html">Improve this
+            page</a>
     </header>
     <div class="banner"></div>
     <div class="links">
@@ -220,7 +268,7 @@
         fetch && fetch('https://api.github.com/repos/ParisDeno/ParisDeno.github.io/commits/HEAD').then(repsonse => repsonse.json()).then(commit => {
             document.querySelector('.version').innerHTML = `<a target="blank" href="${commit.html_url}">${commit.sha.substring(0, 7)}</a>`;
         })
-        
+
     </script>
 </body>
 

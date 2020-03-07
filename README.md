@@ -30,3 +30,9 @@ Logo with rain 1000x1000 PNG
 
 Logo 1000x1000 PNG
 ![logo](img/logo.png)
+
+Logo Transparent 1000x1000 PNG
+![logo](img/logo-transparent.png)
+
+Logo Transparent Negative 1000x1000 PNG
+![logo](img/logo-transparent-negative.png)
